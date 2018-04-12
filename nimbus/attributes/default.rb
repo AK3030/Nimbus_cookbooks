@@ -14,7 +14,7 @@ default[:nimbus][:environment] = {
   "SECRET_KEY_BASE": node[:nimbus][:secret_key_base],
   "DATABASE_URL": node[:nimbus][:database_url],
   "RAILS_ENV": node[:nimbus][:rails_env],
-  "RAILS_LOG_TO_STDOUT": node[:nimbus][:log_to_stdout]
+  "RAILS_LOG_TO_STDOUT": node[:nimbus][:log_to_stdout],
   "S3_BUCKET_NAME": "musicnimbus"
 }
 
