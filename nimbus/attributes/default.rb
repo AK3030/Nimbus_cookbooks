@@ -15,6 +15,7 @@ default[:nimbus][:environment] = {
   "DATABASE_URL": node[:nimbus][:database_url],
   "RAILS_ENV": node[:nimbus][:rails_env],
   "RAILS_LOG_TO_STDOUT": node[:nimbus][:log_to_stdout]
+  "S3_BUCKET_NAME": "musicnimbus"
 }
 
 default[:nimbus][:start_cmd] = "unicorn -E production -c /opt/unicorn.rb"
