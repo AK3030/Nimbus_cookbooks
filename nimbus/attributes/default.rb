@@ -18,7 +18,7 @@ default[:nimbus][:environment] = {
   "RAILS_ENV": node[:nimbus][:rails_env],
   "RAILS_LOG_TO_STDOUT": node[:nimbus][:log_to_stdout],
   "S3_BUCKET_NAME": node[:nimbus][:S3_BUCKET_NAME],
-  "S3_REGION": node[:nimbus][:S3_REGION],
+  "AWS_REGION": node[:nimbus][:S3_REGION],
   "AWS_ACCESS_KEY_ID": node[:nimbus][:AWS_ACCESS_KEY_ID],
   "AWS_SECRET_ACCESS_KEY": node[:nimbus][:AWS_SECRET_ACCESS_KEY]
 }
