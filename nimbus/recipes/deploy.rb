@@ -47,14 +47,28 @@ end
 execute "Clobber Rails Assets" do
   cwd node[:nimbus][:path]
   command "bundle exec rake assets:clobber"
-  environment ({"RAILS_ENV": "production", "HOME": "/home/ubuntu"})
+  environment ({
+    "RAILS_ENV": "production",
+    "HOME": "/home/ubuntu",
+    "S3_BUCKET_NAME": node[:nimbus][:S3_BUCKET_NAME],
+    "S3_REGION": node[:nimbus][:S3_REGION]
+    "AWS_ACCESS_KEY_ID": node[:nimbus][:AWS_ACCESS_KEY_ID],
+    "AWS_SECRET_ACCESS_KEY": node[:nimbus][:AWS_SECRET_ACCESS_KEY]
+  })
   user "ubuntu"
 end
 
 execute "Compile Rails Assets" do
   cwd node[:nimbus][:path]
   command "bundle exec rake assets:precompile"
-  environment ({"RAILS_ENV": "production", "HOME": "/home/ubuntu"})
+  environment ({
+    "RAILS_ENV": "production",
+    "HOME": "/home/ubuntu",
+    "S3_BUCKET_NAME": node[:nimbus][:S3_BUCKET_NAME],
+    "S3_REGION": node[:nimbus][:S3_REGION],
+    "AWS_ACCESS_KEY_ID": node[:nimbus][:AWS_ACCESS_KEY_ID],
+    "AWS_SECRET_ACCESS_KEY": node[:nimbus][:AWS_SECRET_ACCESS_KEY]
+  })
   user "ubuntu"
 end
 
